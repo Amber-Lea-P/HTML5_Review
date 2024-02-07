@@ -14,107 +14,112 @@
         <link rel="stylesheet" href="main.css" type="text/css"> 
             <!--This is how we link our style sheet (main.css) to the html document, relative reference-->
     </head>
-    <body> <!--The headers give semantic meaning for screen readers. Important to use them in order of importance-->
-        <h1>My Goals for the Year</h1>
 
+    <body> <!--The headers give semantic meaning for screen readers. Important to use them in order of importance-->
+        <header> <!--There can be more than one header. They must follow header semantics-->
+            <h1>My Goals for the Year</h1>
+
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#html">Learning HTML</a>
+                        <!--To have the link linked to an internal section, the section must first be given an ID and then the id must be href witht the # sign, example: #html-->
+                    </li>
+                    <li><a href="#vacation">Planning a vacation</a></li>
+                </ul>
+            </nav>
+
+        </header>
         <hr><!--horizontal rule, puts a line across the page-->
 
-        <nav>
-            <ul>
-                <li>
-                    <a href="#html">Learning HTML</a>
-                     <!--To have the link linked to an internal section, the section must first be given an ID and then the id must be href witht the # sign, example: #html-->
-                </li>
-                <li><a href="#vacation">Planning a vacation</a></li>
-            </ul>
-        </nav>
-
-        <hr>
-
-        <section id="html">
-            <h2>I'm ready to Learn HTML</h2>
-            <p>This is my first web page. </p>
-            <img src="img/html_logo_300x300.png" alt="HTML5 Logo" title="I am learning html5" width="300" height="300"> <!--The alt text will show up if the file path is broken. The title will not show up for screen readers so its critical that important information isnt put here. The title text should compliment the "alt" text-->
-            <!--Width and height attributes havent been manadatory for many years but they are now making a comeback. CSS can override it. This information is provided to give the browser an idea of the size of the image and the aspect ratio-->
-            <figure> <!--Can be used for more than just images-->
-                <figcaption>
-                    An example of HTML5 code
-                </figcaption>
-                <p>
-                    <code>&lt;h1&gt;Hello World!&lt;/hl&gt;</code> <!--THe code element helps you actually display code on the page-->
-                </p>
-            </figure>
-            <h3>My Daily Schedule</h3>
-            <p>Let me tell you how:</p>
-                <ol> <!--orderder list will not have as much inbetween spacing as a paragraph <p>-->
-                    <li>...I learn more about web dev. </li>
-                    <li>...I plan out my schedule.</li>
-                    <li>...I use resources from <abbr title="Mozilla Devolper Network">
-                        <a href="https://developer.mozilla.org/">MDN</a>
-                    </abbr>.</li> <!--This href has the full website address so it is an absolute reference. The anchor tag <a>, by itself wont link to anything. It needs a specific attribute-->
-                </ol>
-        </section>
-      
-            <!-- **Commented out from previous example: This was how we set up the breaks, an html entity, and abreviaitons previously:
-                <br>&nbsp;&nbsp;&nbsp;...I learn more about web dev. Example of an html entity, The entities are used to do special formating, &nbsp; adds a space
-                <br>&nbsp;&nbsp;&nbsp;...I plan out my schedule.
-                <br>&nbsp;&nbsp;&nbsp;...I use resources from <abbr title="Mozilla Devolper Network">MDN</abbr>. 
-                The abbr HTML entity doesnt work by itself. A title attribute must also be set. Now the HTML will have dots under the MDN text. When the user scrolls over the MDN text it will show them the full title. *THIS IS NOT AVAILABLE FOR SCREEN READERS SO NOTHING SUPER IMPORTANT SHOULD BE HERE*
-            -->
-
-        <hr>
-        <section id="vacation">
-            <h2>I Am Also Planning a Vacation</h2>
-            <p>I've been working hard and <em>really need a getaway</em>. </p> <!--Screen reader or browser will know we are emphasizing 'really need a getaway' because we used the inline element-->
-            <p>I live in <abbr title="Kansas">KS</abbr> so i want to visit a beach </p>
-
-            <h3>Places I'd Like to Visit</h3>
-            <ul><!--Ordered list and undordered list are indented-->
-                <li>
-                    <p>I've heard good things about the Carribbean</p>
-                    <figure>
-                        <img src="img/caribbean.jpg" alt="Caribbean Beach" title="I want to visit a Caribbean beach." width="400" height="225" loading="lazy">
-                        <!--Loading attribute is automatically set to eager. A best practice is to set photos below the fold (the ones not automattically viewable when the screen is loaded) to "lazy". This tells the browswer to load the photo once its about to be visibile to on the browser-->
-                        <figcaption>
-                            Carribean Beach getaway
-                        </figcaption> <!--Wrapping the image in the figure element allows us to use the figcaption. The figcaption is better than just using a paragraph because the figcaption is telling the browser and assisted technology that the caption is attached to the image. Doesnt have to be identical to the "alt" but should be descriptive of the image. **The figcaption can be the first or last thing of the figure element** -->
+        <main>
+            <section id="html">
+                <h2>I'm ready to Learn HTML</h2>
+                <p>This is my first web page. </p>
+                <img src="img/html_logo_300x300.png" alt="HTML5 Logo" title="I am learning html5" width="300" height="300"> <!--The alt text will show up if the file path is broken. The title will not show up for screen readers so its critical that important information isnt put here. The title text should compliment the "alt" text-->
+                <!--Width and height attributes havent been manadatory for many years but they are now making a comeback. CSS can override it. This information is provided to give the browser an idea of the size of the image and the aspect ratio-->
+                <figure> <!--Can be used for more than just images-->
+                    <figcaption>
+                        An example of HTML5 code
+                    </figcaption>
+                    <p>
+                        <code>&lt;h1&gt;Hello World!&lt;/hl&gt;</code> <!--THe code element helps you actually display code on the page-->
+                    </p>
                 </figure>
-                </li>
-                <li>
-                    <p>I've heard good things about going here:</p>
-                    <address> <!--this tells the browser that this is an address. Assistant technology will also know that this is an address-->
-                        Margaritaville Island Reserve Riviera Cancún<br>
-                        Bahia Petempich Puerto Morelos, Mexico<br>
-                        Colonia Morelos, México 77580
-                    </address>
-                    <figure>
-                        <img src="img/vacation.jpg" alt="Cancun Vacation" title="It's 5 o'Clock Somewhere!" loading="lazy" width="400" height="267">
-                        <figcaption>
-                            A Carribean Vacation Image
-                        </figcaption>
+                <h3>My Daily Schedule</h3>
+                <p>Let me tell you how:</p>
+                    <ol> <!--orderder list will not have as much inbetween spacing as a paragraph <p>-->
+                        <li>...I learn more about web dev. </li>
+                        <li>...I plan out my schedule.</li>
+                        <li>...I use resources from <abbr title="Mozilla Devolper Network">
+                            <a href="https://developer.mozilla.org/">MDN</a>
+                        </abbr>.</li> <!--This href has the full website address so it is an absolute reference. The anchor tag <a>, by itself wont link to anything. It needs a specific attribute-->
+                    </ol>
+            </section>
+        
+                <!-- **Commented out from previous example: This was how we set up the breaks, an html entity, and abreviaitons previously:
+                    <br>&nbsp;&nbsp;&nbsp;...I learn more about web dev. Example of an html entity, The entities are used to do special formating, &nbsp; adds a space
+                    <br>&nbsp;&nbsp;&nbsp;...I plan out my schedule.
+                    <br>&nbsp;&nbsp;&nbsp;...I use resources from <abbr title="Mozilla Devolper Network">MDN</abbr>. 
+                    The abbr HTML entity doesnt work by itself. A title attribute must also be set. Now the HTML will have dots under the MDN text. When the user scrolls over the MDN text it will show them the full title. *THIS IS NOT AVAILABLE FOR SCREEN READERS SO NOTHING SUPER IMPORTANT SHOULD BE HERE*
+                -->
+
+            <hr>
+            <section id="vacation">
+                <h2>I Am Also Planning a Vacation</h2>
+                <p>I've been working hard and <em>really need a getaway</em>. </p> <!--Screen reader or browser will know we are emphasizing 'really need a getaway' because we used the inline element-->
+                <p>I live in <abbr title="Kansas">KS</abbr> so i want to visit a beach </p>
+
+                <h3>Places I'd Like to Visit</h3>
+                <ul><!--Ordered list and undordered list are indented-->
+                    <li>
+                        <p>I've heard good things about the Carribbean</p>
+                        <figure>
+                            <img src="img/caribbean.jpg" alt="Caribbean Beach" title="I want to visit a Caribbean beach." width="400" height="225" loading="lazy">
+                            <!--Loading attribute is automatically set to eager. A best practice is to set photos below the fold (the ones not automattically viewable when the screen is loaded) to "lazy". This tells the browswer to load the photo once its about to be visibile to on the browser-->
+                            <figcaption>
+                                Carribean Beach getaway
+                            </figcaption> <!--Wrapping the image in the figure element allows us to use the figcaption. The figcaption is better than just using a paragraph because the figcaption is telling the browser and assisted technology that the caption is attached to the image. Doesnt have to be identical to the "alt" but should be descriptive of the image. **The figcaption can be the first or last thing of the figure element** -->
                     </figure>
-                </li> <!--the list items can have tags nested inside of them-->
-            </ul>
-            <!--TODO: add more places-->
+                    </li>
+                    <li>
+                        <p>I've heard good things about going here:</p>
+                        <address> <!--this tells the browser that this is an address. Assistant technology will also know that this is an address-->
+                            Margaritaville Island Reserve Riviera Cancún<br>
+                            Bahia Petempich Puerto Morelos, Mexico<br>
+                            Colonia Morelos, México 77580
+                        </address>
+                        <figure>
+                            <img src="img/vacation.jpg" alt="Cancun Vacation" title="It's 5 o'Clock Somewhere!" loading="lazy" width="400" height="267">
+                            <figcaption>
+                                A Carribean Vacation Image
+                            </figcaption>
+                        </figure>
+                    </li> <!--the list items can have tags nested inside of them-->
+                </ul>
+                <!--TODO: add more places-->
 
-            <h3>Places I Want To Avoid</h3>
-            <dl> <!--This is a descriptive list. it will need <dt> 'description term' and <dd> 'description detail'-->
-                <dt>North Pole</dt>
-                <dd>I hear this is <strong>cold</strong>!</dd>
+                <h3>Places I Want To Avoid</h3>
+                <dl> <!--This is a descriptive list. it will need <dt> 'description term' and <dd> 'description detail'-->
+                    <dt>North Pole</dt>
+                    <dd>I hear this is <strong>cold</strong>!</dd>
 
-                <dt>South Pole</dt>
-                <dd>This is also cold.</dd>
+                    <dt>South Pole</dt>
+                    <dd>This is also cold.</dd>
 
-                <dt>Mountain Tops</dt>
-                <dd>These are also cold.</dd>
-            </dl>
-        <!-- <p>Anywhere cold. <strong>No way!</strong></p> This inline element will make the text 'No way!' bold **previous text, keeping as notes becuase it displays the strong emphasis-->
-        </section>
+                    <dt>Mountain Tops</dt>
+                    <dd>These are also cold.</dd>
+                </dl>
+            <!-- <p>Anywhere cold. <strong>No way!</strong></p> This inline element will make the text 'No way!' bold **previous text, keeping as notes becuase it displays the strong emphasis-->
+            </section>
+        </main> <!--There can only be one main per page!-->
         <hr>
-        &lt;&lt;&lt; &copy; <a href="about.html">Amber Lea</a> &gt;&gt;&gt;  <!--These are all examples of html entities, the &copy stands for the copy right sign, this will now be referred to the about.html page-->
-<!--Block level: everything starts on a new line, will always need to create that space for example: H1, p, h2, etc.-->
-<!--<em> is an example of an inline element. Different from Block level element, can be done on the same line-->
-    <!--You can used Ctrl+d to select more than one line. -->
+        <footer><!--can be more than one footer per page-->
+           <p> &lt;&lt;&lt; &copy; <a href="about.html">Amber Lea</a> &gt;&gt;&gt;</p>  <!--These are all examples of html entities, the &copy stands for the copy right sign, this will now be referred to the about.html page-->
+            <p>
+                <a href="#">Back to Top</a>
+            </p>
+        </footer>
     </body>
 </html>
 
@@ -122,3 +127,6 @@
 Link Text Rule #2: Avoid "links to" phrase. We all know its a link.
 Link Text Rule #3: Keep your link text short. Exact topic. Not sentences.
 Link Text Rule #4: No links that say "click here". It provides no meaning -->
+<!--Block level: everything starts on a new line, will always need to create that space for example: H1, p, h2, etc.-->
+<!--<em> is an example of an inline element. Different from Block level element, can be done on the same line-->
+<!--You can used Ctrl+d to select more than one line. -->
