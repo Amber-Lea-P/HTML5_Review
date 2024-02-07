@@ -36,6 +36,14 @@
             <p>This is my first web page. </p>
             <img src="img/html_logo_300x300.png" alt="HTML5 Logo" title="I am learning html5" width="300" height="300"> <!--The alt text will show up if the file path is broken. The title will not show up for screen readers so its critical that important information isnt put here. The title text should compliment the "alt" text-->
             <!--Width and height attributes havent been manadatory for many years but they are now making a comeback. CSS can override it. This information is provided to give the browser an idea of the size of the image and the aspect ratio-->
+            <figure> <!--Can be used for more than just images-->
+                <figcaption>
+                    An example of HTML5 code
+                </figcaption>
+                <p>
+                    <code>&lt;h1&gt;Hello World!&lt;/hl&gt;</code> <!--THe code element helps you actually display code on the page-->
+                </p>
+            </figure>
             <h3>My Daily Schedule</h3>
             <p>Let me tell you how:</p>
                 <ol> <!--orderder list will not have as much inbetween spacing as a paragraph <p>-->
@@ -64,8 +72,13 @@
             <ul><!--Ordered list and undordered list are indented-->
                 <li>
                     <p>I've heard good things about the Carribbean</p>
-                    <img src="img/caribbean.jpg" alt="Caribbean Beach" title="I want to visit a Caribbean beach." width="400" height="225" loading="lazy">
-                    <!--Loading attribute is automatically set to eager. A best practice is to set photos below the fold (the ones not automattically viewable when the screen is loaded) to "lazy". This tells the browswer to load the photo once its about to be visibile to on the browser-->
+                    <figure>
+                        <img src="img/caribbean.jpg" alt="Caribbean Beach" title="I want to visit a Caribbean beach." width="400" height="225" loading="lazy">
+                        <!--Loading attribute is automatically set to eager. A best practice is to set photos below the fold (the ones not automattically viewable when the screen is loaded) to "lazy". This tells the browswer to load the photo once its about to be visibile to on the browser-->
+                        <figcaption>
+                            Carribean Beach getaway
+                        </figcaption> <!--Wrapping the image in the figure element allows us to use the figcaption. The figcaption is better than just using a paragraph because the figcaption is telling the browser and assisted technology that the caption is attached to the image. Doesnt have to be identical to the "alt" but should be descriptive of the image. **The figcaption can be the first or last thing of the figure element** -->
+                </figure>
                 </li>
                 <li>
                     <p>I've heard good things about going here:</p>
@@ -74,6 +87,12 @@
                         Bahia Petempich Puerto Morelos, Mexico<br>
                         Colonia Morelos, México 77580
                     </address>
+                    <figure>
+                        <img src="img/vacation.jpg" alt="Cancun Vacation" title="It's 5 o'Clock Somewhere!" loading="lazy" width="400" height="267">
+                        <figcaption>
+                            A Carribean Vacation Image
+                        </figcaption>
+                    </figure>
                 </li> <!--the list items can have tags nested inside of them-->
             </ul>
             <!--TODO: add more places-->
