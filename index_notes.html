@@ -19,7 +19,13 @@
         <header> <!--There can be more than one header. They must follow header semantics-->
             <h1>My Goals for the Year</h1>
 
-            <nav>
+            <nav aria-label="primary-navigation"><!--Its possible to have more than one nav per page. For example, there can be a navigation bar in the footer. If you have more than one nav per page then its important to label the nav so that assisted technology knows which one is which-->
+
+                <!--If you have a nav that has a h2 associated with it, then you can link them together:
+                <nav aria-labelledby="primary-navigation">
+                    <h2 id="primary-navigation">Primary Navigation</h2>
+                </nav>
+            Notice how the aria-label is now aria-labeledby which is causing the link between the nav and h2-->
                 <ul>
                     <li>
                         <a href="#html">Learning HTML</a>
@@ -33,7 +39,7 @@
         <hr><!--horizontal rule, puts a line across the page-->
 
         <main>
-            <section id="html">
+            <article id="html"> <!--article has a clear subject where a section is more an in general topic-->
                 <h2>I'm ready to Learn HTML</h2>
                 <p>This is my first web page. </p>
                 <img src="img/html_logo_300x300.png" alt="HTML5 Logo" title="I am learning html5" width="300" height="300"> <!--The alt text will show up if the file path is broken. The title will not show up for screen readers so its critical that important information isnt put here. The title text should compliment the "alt" text-->
@@ -55,7 +61,7 @@
                             <a href="https://developer.mozilla.org/">MDN</a>
                         </abbr>.</li> <!--This href has the full website address so it is an absolute reference. The anchor tag <a>, by itself wont link to anything. It needs a specific attribute-->
                     </ol>
-            </section>
+            </article>
         
                 <!-- **Commented out from previous example: This was how we set up the breaks, an html entity, and abreviaitons previously:
                     <br>&nbsp;&nbsp;&nbsp;...I learn more about web dev. Example of an html entity, The entities are used to do special formating, &nbsp; adds a space
@@ -65,7 +71,7 @@
                 -->
 
             <hr>
-            <section id="vacation">
+            <article id="vacation">
                 <h2>I Am Also Planning a Vacation</h2>
                 <p>I've been working hard and <em>really need a getaway</em>. </p> <!--Screen reader or browser will know we are emphasizing 'really need a getaway' because we used the inline element-->
                 <p>I live in <abbr title="Kansas">KS</abbr> so i want to visit a beach </p>
@@ -111,7 +117,7 @@
                     <dd>These are also cold.</dd>
                 </dl>
             <!-- <p>Anywhere cold. <strong>No way!</strong></p> This inline element will make the text 'No way!' bold **previous text, keeping as notes becuase it displays the strong emphasis-->
-            </section>
+            </article>
         </main> <!--There can only be one main per page!-->
         <hr>
         <footer><!--can be more than one footer per page-->
