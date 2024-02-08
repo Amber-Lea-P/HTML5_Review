@@ -39,19 +39,22 @@
         <hr><!--horizontal rule, puts a line across the page-->
 
         <main>
-            <article id="html"> <!--article has a clear subject where a section is more an in general topic-->
+            <article id="html"> <!--article has a clear topic where a section is more  generic-->
                 <h2>I'm ready to Learn HTML</h2>
                 <p>This is my first web page. </p>
-                <img src="img/html_logo_300x300.png" alt="HTML5 Logo" title="I am learning html5" width="300" height="300"> <!--The alt text will show up if the file path is broken. The title will not show up for screen readers so its critical that important information isnt put here. The title text should compliment the "alt" text-->
-                <!--Width and height attributes havent been manadatory for many years but they are now making a comeback. CSS can override it. This information is provided to give the browser an idea of the size of the image and the aspect ratio-->
-                <figure> <!--Can be used for more than just images-->
-                    <figcaption>
-                        An example of HTML5 code
-                    </figcaption>
-                    <p>
-                        <code>&lt;h1&gt;Hello World!&lt;/hl&gt;</code> <!--THe code element helps you actually display code on the page-->
-                    </p>
-                </figure>
+                <section>
+                    <img src="img/html_logo_300x300.png" alt="HTML5 Logo" title="I am learning html5" width="300" height="300"> <!--The alt text will show up if the file path is broken. The title will not show up for screen readers so its critical that important information isnt put here. The title text should compliment the "alt" text-->
+                    <!--Width and height attributes havent been manadatory for many years but they are now making a comeback. CSS can override it. This information is provided to give the browser an idea of the size of the image and the aspect ratio-->
+                    <figure> <!--Can be used for more than just images-->
+                        <figcaption>
+                            An example of HTML5 code
+                        </figcaption>
+                        <p>
+                            <code>&lt;h1&gt;Hello World!&lt;/hl&gt;</code> <!--THe code element helps you actually display code on the page-->
+                        </p>
+                    </figure>
+                </section>
+                <section>
                 <h3>My Daily Schedule</h3>
                 <p>Let me tell you how:</p>
                     <ol> <!--orderder list will not have as much inbetween spacing as a paragraph <p>-->
@@ -61,6 +64,13 @@
                             <a href="https://developer.mozilla.org/">MDN</a>
                         </abbr>.</li> <!--This href has the full website address so it is an absolute reference. The anchor tag <a>, by itself wont link to anything. It needs a specific attribute-->
                     </ol>
+                    <aside><!--a section of complimentary text that is not as important as the main section-->
+                        <details><!--details and summary work together to provide more information-->
+                            <summary>Guess the <mark>number of hours</mark> i code per day?</summary>
+                                <p>I start at <time datetime="8:00"> 8 am</time> and I write code for 3 hours every morning</p> <!--this date attribute doesnt change the way the website looks but it provides the code meaning for screen readers-->
+                        </details>
+                    </aside>
+                </section>
             </article>
         
                 <!-- **Commented out from previous example: This was how we set up the breaks, an html entity, and abreviaitons previously:
