@@ -67,7 +67,8 @@
                     <aside><!--a section of complimentary text that is not as important as the main section-->
                         <details><!--details and summary work together to provide more information-->
                             <summary>Guess the <mark>number of hours</mark> i code per day?</summary>
-                                <p>I start at <time datetime="8:00"> 8 am</time> and I write code for 3 hours every morning</p> <!--this date attribute doesnt change the way the website looks but it provides the code meaning for screen readers-->
+    
+                                <p>I start at <time datetime="08:00">8 am</time> and I write code for <time datetime="PT3H">3 hours</time> every morning.</p> <!--this date attribute doesnt change the way the website looks but it provides the code meaning for screen readers-->
                         </details>
                     </aside>
                 </section>
@@ -149,3 +150,5 @@ Link Text Rule #4: No links that say "click here". It provides no meaning -->
 <!--Block level: everything starts on a new line, will always need to create that space for example: H1, p, h2, etc.-->
 <!--<em> is an example of an inline element. Different from Block level element, can be done on the same line-->
 <!--You can used Ctrl+d to select more than one line. -->
+
+<!--<div><!div> and <span></span> have no semantic meaning and should be used sparingly and only when there are no other options. For assisted readers and browers these tags do no provide anything without additional attributes. -->
