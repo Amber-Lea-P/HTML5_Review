@@ -86,47 +86,50 @@
                 <p>I've been working hard and <em>really need a getaway</em>. </p> <!--Screen reader or browser will know we are emphasizing 'really need a getaway' because we used the inline element-->
                 <p>I live in <abbr title="Kansas">KS</abbr> so i want to visit a beach </p>
 
-                <h3>Places I'd Like to Visit</h3>
-                <ul><!--Ordered list and undordered list are indented-->
-                    <li>
-                        <p>I've heard good things about the Carribbean</p>
-                        <figure>
-                            <img src="img/caribbean.jpg" alt="Caribbean Beach" title="I want to visit a Caribbean beach." width="400" height="225" loading="lazy">
-                            <!--Loading attribute is automatically set to eager. A best practice is to set photos below the fold (the ones not automattically viewable when the screen is loaded) to "lazy". This tells the browswer to load the photo once its about to be visibile to on the browser-->
-                            <figcaption>
-                                Carribean Beach getaway
-                            </figcaption> <!--Wrapping the image in the figure element allows us to use the figcaption. The figcaption is better than just using a paragraph because the figcaption is telling the browser and assisted technology that the caption is attached to the image. Doesnt have to be identical to the "alt" but should be descriptive of the image. **The figcaption can be the first or last thing of the figure element** -->
-                    </figure>
-                    </li>
-                    <li>
-                        <p>I've heard good things about going here:</p>
-                        <address> <!--this tells the browser that this is an address. Assistant technology will also know that this is an address-->
-                            Margaritaville Island Reserve Riviera Cancún<br>
-                            Bahia Petempich Puerto Morelos, Mexico<br>
-                            Colonia Morelos, México 77580
-                        </address>
-                        <figure>
-                            <img src="img/vacation.jpg" alt="Cancun Vacation" title="It's 5 o'Clock Somewhere!" loading="lazy" width="400" height="267">
-                            <figcaption>
-                                A Carribean Vacation Image
-                            </figcaption>
+                <section>
+                    <h3>Places I'd Like to Visit</h3>
+                    <ul><!--Ordered list and undordered list are indented-->
+                        <li>
+                            <p>I've heard good things about the Carribbean</p>
+                            <figure>
+                                <img src="img/caribbean.jpg" alt="Caribbean Beach" title="I want to visit a Caribbean beach." width="400" height="225" loading="lazy">
+                                <!--Loading attribute is automatically set to eager. A best practice is to set photos below the fold (the ones not automattically viewable when the screen is loaded) to "lazy". This tells the browswer to load the photo once its about to be visibile to on the browser-->
+                                <figcaption>
+                                    Carribean Beach getaway
+                                </figcaption> <!--Wrapping the image in the figure element allows us to use the figcaption. The figcaption is better than just using a paragraph because the figcaption is telling the browser and assisted technology that the caption is attached to the image. Doesnt have to be identical to the "alt" but should be descriptive of the image. **The figcaption can be the first or last thing of the figure element** -->
                         </figure>
-                    </li> <!--the list items can have tags nested inside of them-->
-                </ul>
+                        </li>
+                        <li>
+                            <p>I've heard good things about going here:</p>
+                            <address> <!--this tells the browser that this is an address. Assistant technology will also know that this is an address-->
+                                Margaritaville Island Reserve Riviera Cancún<br>
+                                Bahia Petempich Puerto Morelos, Mexico<br>
+                                Colonia Morelos, México 77580
+                            </address>
+                            <figure>
+                                <img src="img/vacation.jpg" alt="Cancun Vacation" title="It's 5 o'Clock Somewhere!" loading="lazy" width="400" height="267">
+                                <figcaption>
+                                    A Carribean Vacation Image
+                                </figcaption>
+                            </figure>
+                        </li> <!--the list items can have tags nested inside of them-->
+                    </ul>
+                </section>
                 <!--TODO: add more places-->
+                <section>
+                    <h3>Places I Want To Avoid</h3>
+                    <dl> <!--This is a descriptive list. it will need <dt> 'description term' and <dd> 'description detail'-->
+                        <dt>North Pole</dt>
+                        <dd>I hear this is <strong>cold</strong>!</dd>
 
-                <h3>Places I Want To Avoid</h3>
-                <dl> <!--This is a descriptive list. it will need <dt> 'description term' and <dd> 'description detail'-->
-                    <dt>North Pole</dt>
-                    <dd>I hear this is <strong>cold</strong>!</dd>
+                        <dt>South Pole</dt>
+                        <dd>This is also cold.</dd>
 
-                    <dt>South Pole</dt>
-                    <dd>This is also cold.</dd>
-
-                    <dt>Mountain Tops</dt>
-                    <dd>These are also cold.</dd>
-                </dl>
+                        <dt>Mountain Tops</dt>
+                        <dd>These are also cold.</dd>
+                    </dl>
             <!-- <p>Anywhere cold. <strong>No way!</strong></p> This inline element will make the text 'No way!' bold **previous text, keeping as notes becuase it displays the strong emphasis-->
+                </section>
             </article>
         </main> <!--There can only be one main per page!-->
         <hr>
