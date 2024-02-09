@@ -19,7 +19,12 @@
                     <li>
                         <a href="#html">Learning HTML</a>
                     </li>
-                    <li><a href="#vacation">Planning a vacation</a></li>
+                    <li>
+                        <a href="#vacation">Planning a vacation</a>
+                    </li>
+                    <li>
+                        <a href="#contact">Contact Me</a>
+                    </li>
                 </ul>
             </nav>
 
@@ -160,6 +165,30 @@
                         <dd>These are also cold.</dd>
                     </dl>
                 </section>
+            </article>
+            <hr>
+            <article id="contact">
+                <h2>Contact Me</h2>
+                <p>I'd really like to hear from you!</p>
+
+                <form action="https://httpbin.org/get" method="get">
+                    <p>
+                    <label for="firstName">First Name:</label>
+                    <input type="text" name="firstName" id="firstName" placeholder="Your first name" autocomplete="on" required autofocus>
+                    </p>
+                    <p>
+                    <label for="lastName">Last Name:</label>
+                    <input type="text" name="lastName" id="lastName" placeholder="Your Last name" autocomplete="on" required>
+                    </p>
+                    <p>
+                    <label for="password">Password:</label>
+                    <input type="password" name="password" id="password" placeholder="Your secret" required>
+                    </p>
+                    <p>
+                    <label for="phone">Phone:</label>
+                    <input type="tel" name="phone" id="phone" placeholder="555-555-5555" required>
+                    </p>
+                </form>
             </article>
         </main>
 
