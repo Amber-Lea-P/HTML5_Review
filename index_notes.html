@@ -62,7 +62,7 @@
                 <section>
                 <h3>My Daily Schedule</h3>
                 <p>Let me tell you how:</p>
-                    <ol> <!--orderder list will not have as much inbetween spacing as a paragraph <p>-->
+                    <ol> <!--order list will not have as much inbetween spacing as a paragraph <p>-->
                         <li>...I learn more about web dev. </li>
                         <li>...I plan out my schedule.</li>
                         <li>...I use resources from <abbr title="Mozilla Devolper Network">
@@ -144,6 +144,8 @@
                 <p>I'd really like to hear from you!</p>
 
                 <form action="https://httpbin.org/get" method="get">
+                    <fieldset> <!--when a form starts to get big, its good to break it into sections-->
+                        <legend>Personal Info</legend> <!--This is like a caption and will section off part of the form. Gives more semantic meaning-->
                     <p>
                         <label for="firstName">First Name:</label> <!--The label's "for" must match the "id" of the input. Its a best practice is fthe for, name and id match. The name is how this is identified at the server level-->
                         <input type="text" name="firstName" id="firstName" placeholder="Your first name" autocomplete="on" required autofocus> <!--Placeholder is holding the place of the value but will disappear once the value is entered. Often this is where an example shows. Autocomplete is waiting for an on or off response. It will remember entries from before and suggest those. Required tells the code that this input is required. The form can only have one element that has autofocus -->
@@ -158,8 +160,92 @@
                     </p>
                     <p>
                         <label for="phone">Phone:</label>
-                        <input type="tel" name="phone" id="phone" placeholder="555-555-5555" required>
+                        <input type="tel" name="phone" id="phone" placeholder="5555555555" 
+                        pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required><!--the pattern attribute does require that the phone number is typed in that way for the form to be submitted-->
                     </p> <!--type is "tel"-->
+                    <p>
+                        <label for="decade">Favorite decade:</label>
+                        <input type="number" name="decade" id="decade" min="1950" max="2020" step="10"  value="1980">
+                    </p><!--The min and max will show the suitable values. Step will be the inverval. The starting value will be marked with value. Now when this section is moused over there will be arrows-->
+                    <p>
+                        <label for="coffee">Favorite coffee:</label>
+                        <select name="coffee" id="coffee" multiple size="5"><!--this allows the user to choose multiple and size tells how many opitons will be visible-->
+                            <optgroup label="Coffees"><!--this groups the options-->
+                                <option value="regular coffee">Regular Coffee</option>
+                                <option value="iced cofee">Iced Coffee</option>
+                            </optgroup>
+                            <optgroup label="Espresso Drinks">
+                                <option value="latte" selected>Latte</option> <!--By adding the text "selected" it shows this as the default option-->
+                                <option value="cappuccino">Cappuccino</option>
+                                <option value="cortado">Cortado</option>
+                                <option value="americano">Americano</option>
+                            </optgroup>
+                                <option value="other">Other</option>
+                        </select>
+                    </p>
+
+                    <!-- <p>
+                    <label for="coffee">Favorite Coffee:</label>
+                    <input type="text" name="coffee" id="coffee" list="coffee-list">
+                    <datalist id="coffee-list">
+                        <option value="coffee">
+                        <option value="latte">
+                        <option value="espresso">
+                        <option value="cortado">
+                        <option value="americano">
+                        <option value="other">
+                    </datalist>
+                </p> -->
+                <!--Instead of a select we have an input type. Notice that that he "list" and "datalist id" have the same text. This is an alternative option  to the other kind of input list. On the broweser, a white box shows as blank with a drop down menu. This box can be typed in and will automatically generate choices based off of the available answers  -->
+            </fieldset> 
+            <br>
+                <fieldset> <!--New section of the form this time with radio buttons-->
+                    <legend>What is your favorite food?</legend>
+                    <p>
+                        <input type="radio" name="food" id="tacos" value="tacos">
+                        <label for="tacos">Tacos</label> </p><!--the id and label must match. The name "food", should all be the same. This will make it so that only one option can be selected at a time-->
+                    </p>
+                    <p>
+                        <input type="radio" name="food" id="pizza" value="pizza">
+                        <label for="pizza">Pizza</label>
+                    </p>
+                    <p>
+                        <input type="radio" name="food" id="other" value="other">
+                        <label for="other">Other</label> <!--important to make sure to always use unique IDs with in the form. For example, if the ID "other" was used previously then you wouldnt want to use it here-->
+                    </p>
+                </fieldset>
+                <br>
+                <fieldset> <!--From section with checkbox. very similar to radio buttons but with checkbox you can select more than one-->
+                    <legend>Do you have pets?</legend>
+                    <p>
+                        <input type="checkbox" name="pets" id="dog" value="dog">
+                        <label for="dog">Dog</label>
+                    </p>
+                    <p>
+                        <input type="checkbox" name="pets" id="cat" value="cat">
+                        <label for="cat">Cat</label>
+                    </p>
+                    <p>
+                        <input type="checkbox" name="pets" id="fish" value="fish">
+                        <label for="fish">Fish</label>
+                    </p>
+                    <p>
+                        <input type="checkbox" name="pets" id="otherPet" value="otherPet"> <!--Notice here how the id has been made different from just "other"-->
+                        <label for="otherPet">Other</label>
+                    </p>
+                </fieldset>
+                <br>
+                <fieldset>
+                    <legend>Send Me A Note</legend>
+                    <label for="message">Your Message:</label>
+                    <br>
+                    <textarea name="message" id="message" cols="30" rows="10"
+                        placeholder="Type your message here"></textarea> <!--automatically gives columns and rows-->
+                </fieldset>
+                <br>
+                <button type="submit">Submit</button> <!--could use and input but they only allow a text input, button is a preffered method. Checks the validation immediately. Will double check all required information-->
+                <button type="submit" formaction="https://httpbin.org/post" formmethod="post">Post</button><!-- can have more than one sumbit button per page. Notice that this has a formmethod. -->
+                <button type="reset">Reset</button>
                 </form> <!--need to add a method. The action is where the data is being sent to. Normally this information would be sent to our server but to see the infor we will send it to the httpbin.org/get-->
             </article> 
         </main> <!--There can only be one main per page!-->
